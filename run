@@ -1,4 +1,4 @@
-#!/bin/sh -e
+set -e
 mkdir salesforce-ci
 cd salesforce-ci
 wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.1.0/pmd-bin-6.1.0.zip
