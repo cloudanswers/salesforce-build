@@ -1,7 +1,7 @@
-git clone xxxxx
+mkdir salesforce-ci
 cd salesforce-ci
 curl https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.1.0/pmd-bin-6.1.0.zip
 unzip pmd-bin-6.1.0.zip
-curl https://raw.githubusercontent.com/pmd/pmd/master/pmd-apex/src/main/resources/rulesets/apex/ruleset.xml
+curl https://raw.githubusercontent.com/pmd/pmd/master/pmd-apex/src/main/resources/rulesets/apex/ruleset.xml > ruleset.xml
 pmd -dir ../src -format text -language apex -rulesets ruleset.xml
 cd ..

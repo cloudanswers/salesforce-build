@@ -3,6 +3,10 @@ salesforce-ci
 
 CloudAnswers standard build script for our projects
 
+Assumptions:
+
+- your salesforce source code is in ./src
+
 Includes:
 
 - static analysis code scanning via pmd
