@@ -22,4 +22,4 @@ Usage:
 
 Add this line to your CI setup:
 
-    curl https://raw.githubusercontent.com/cloudanswers/salesforce-ci/master/run test
+    curl https://raw.githubusercontent.com/cloudanswers/salesforce-ci/master/run | bash
