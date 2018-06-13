@@ -6,6 +6,13 @@
 
     <property environment="env"/>
 
+    <target name="refresh">
+        <sf:retrieve username="${env.USERNAME}"
+                    password="${env.PASSWORD}"
+                    retrieveTarget="src"
+                    unpackaged="src/package.xml"/>
+    </target>
+
     <target name="refreshFromPackage">
           <sf:retrieve username="${env.USERNAME}"
                        password="${env.PASSWORD}"
