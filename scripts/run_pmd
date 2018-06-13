@@ -1,0 +1,23 @@
+set -e
+mkdir -p .pmd
+cd .pmd
+
+PMD_VERSION=6.4.0
+
+if [ ! -f "pmd-bin-${PMD_VERSION}.zip" ]
+then
+	wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.4.0/pmd-bin-${PMD_VERSION}.zip
+	unzip pmd-bin-${PMD_VERSION}.zip
+fi
+
+if [ ! -f "ruleset.xml" ]
+then
+	curl https://raw.githubusercontent.com/pmd/pmd/master/pmd-apex/src/main/resources/rulesets/apex/ruleset.xml > ruleset.xml
+fi
+
+./pmd-bin-${PMD_VERSION}/bin/run.sh pmd -d ../src -format text -language apex -rulesets ruleset.xml
+ret=$?
+
+cd ..
+
+return $ret
