@@ -25,9 +25,14 @@ Todo:
 -   dx deploys with different org shapes
 -   test deploy
 -   apex unit testing
+-   ui testing
 
 Usage:
 
-Add this line to your CI setup:
-
-    curl https://raw.githubusercontent.com/cloudanswers/salesforce-ci/master/run | bash
+-   fork this repo
+-   `git clone <your new repo>`
+-   make a .env file with your environment vars
+-   `npm install`
+-   code stuff
+-   `nf run ant refresh` to get your metadata
+-   commit to your repo
