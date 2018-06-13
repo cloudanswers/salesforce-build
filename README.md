@@ -19,14 +19,6 @@ Includes:
 -   basic ant scripts for deploying and getting code from salesforce org
 -   scripts to publish managed package version
 
-Todo:
-
--   lightning component
--   dx deploys with different org shapes
--   test deploy
--   apex unit testing
--   ui testing
-
 Usage:
 
 -   fork this repo
@@ -35,4 +27,14 @@ Usage:
 -   `npm install`
 -   code stuff
 -   `nf run ant refresh` to get your metadata
+-   `./scripts/run_pmd` to see if you have any obvious problems
+-   fix obvious problems
 -   commit to your repo
+
+Todo:
+
+-   lightning component
+-   dx deploys with different org shapes
+-   test deploy
+-   apex unit testing
+-   ui testing
