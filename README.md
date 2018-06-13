@@ -1,22 +1,25 @@
-salesforce-ci
-=============
+# salesforce-ci
 
 CloudAnswers standard build script for our projects
 
-Assumptions:
+Recommendations:
 
-- your salesforce source code is in ./src
+-   your salesforce source code is in ./src
+-   you are able to use command line
+-   You use Prettier for code formatting so diffs are cleaner: https://prettier.io/
 
 Includes:
 
-- static analysis code scanning via pmd
+-   static analysis code scanning via pmd
+-   basic ant scripts for deploying and getting code from salesforce org
+-   scripts to publish managed package version
 
 Todo:
 
-- lightning component
-- dx deploys with different org shapes
-- test deploy
-- apex unit testing
+-   lightning component
+-   dx deploys with different org shapes
+-   test deploy
+-   apex unit testing
 
 Usage:
 

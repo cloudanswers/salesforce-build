@@ -1,0 +1,32 @@
+<project basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <taskdef resource="com/salesforce/antlib.xml"
+             classPath="ant-salesforce.jar"
+             uri="antlib:com.salesforce"/>
+
+    <property environment="env"/>
+
+    <target name="refreshFromPackage">
+          <sf:retrieve username="${env.USERNAME}"
+                       password="${env.PASSWORD}"
+                       retrieveTarget="src"
+                       packageNames="${env.PACKAGE}"/>
+    </target>
+
+    <target name="test">
+          <sf:deploy checkOnly="true"
+                     username="${env.USERNAME}"
+                     password="${env.PASSWORD}"
+                     testLevel="RunLocalTests"
+                     deployroot="src"/>
+    </target>
+
+    <target name="deploy">
+          <sf:deploy checkOnly="false"
+                     username="${env.USERNAME}"
+                     password="${env.PASSWORD}"
+                     deployroot="src"/>
+    </target>
+
+</project>
+
