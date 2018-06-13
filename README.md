@@ -1,12 +1,17 @@
-# salesforce-ci
+# CloudAnswers Salesforce Project Starter
 
 CloudAnswers standard build script for our projects
 
+Depends on the following environment variables:
+
+    USERNAME=your username
+    PASSWORD=your pass + token
+    SERVER_URL=https://login.salesforce.com for dev orgs
+    PACKAGE=name of package
+
 Recommendations:
 
--   your salesforce source code is in ./src
--   you are able to use command line
--   You use Prettier for code formatting so diffs are cleaner: https://prettier.io/
+-   Use Prettier for code formatting so diffs are cleaner: https://prettier.io/
 
 Includes:
 
