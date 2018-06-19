@@ -1,3 +1,6 @@
 node_modules
 .env
 .pmd
+ant-salesforce.jar
+config
+*.sublime-project

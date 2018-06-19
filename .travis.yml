@@ -1,0 +1,11 @@
+language: java
+script: ant test
+env:
+   global:
+      - SALESFORCE_URL=https://login.salesforce.com
+deploy:
+  provider: script
+  script: ant deploy
+before_install:
+  - wget https://gs0.salesforce.com/dwnld/SfdcAnt/salesforce_ant_43.0.zip
+  - unzip salesforce_ant_43.0.zip ant-salesforce.jar
