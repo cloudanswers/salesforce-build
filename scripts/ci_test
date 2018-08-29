@@ -21,8 +21,7 @@ then
 	# make sure we aren't conflicting with anything in production
 	ant refresh
 	git diff # show what is different
-	git add -A 
-	git diff-index --quiet HEAD || git commit -m "refresh from server"
+	git diff-index --quiet HEAD || git commit -a -m "refresh from server"
 
 	# merge our commit which will fail on conflict
 	git merge --no-edit $CI_COMMIT_ID
