@@ -22,7 +22,7 @@ then
 	ant refresh
 	git diff # show what is different
 	git add -A 
-	git commit -m "refresh from server"
+	git diff-index --quiet HEAD || git commit -m "refresh from server"
 
 	# merge our commit which will fail on conflict
 	git merge --no-edit $CI_COMMIT_ID
