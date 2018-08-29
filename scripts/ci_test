@@ -1,0 +1,33 @@
+#!/bin/bash
+set -x # echo on
+set -e # exit script on any non-zero return code
+set -o pipefail # exist script if any pipe fails
+
+if [ "$CI_BRANCH" != "master" ] 
+then
+
+	# so we don't get verbose reminders from git
+	git config --global user.email "CI@example.com"
+	git config --global user.name "CI"
+	git config --global core.pager cat  # less hangs codeship
+
+	# switch to master branch
+	git fetch --unshallow || true
+	git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+	git checkout -b master origin/master
+	git reset --hard
+	git clean -f
+
+	# make sure we aren't conflicting with anything in production
+	ant refresh
+	git diff # show what is different
+	git add -A 
+	git commit -m "refresh from server"
+
+	# merge our commit which will fail on conflict
+	git merge --no-edit $CI_COMMIT_ID
+	
+fi
+
+# if no conflicts have happened, we can test with ant deploy
+ant test
