@@ -4,3 +4,4 @@ node_modules
 ant-salesforce.jar
 config
 *.sublime-project
+*.sublime-workspace
